@@ -1,5 +1,6 @@
 package com.hahoho87.typeconverter.controller;
 
+import com.hahoho87.typeconverter.type.IpPort;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,4 +26,10 @@ public class HelloController {
         return "ok";
     }
 
+    @GetMapping("/ip-port")
+    public String ipPort(@RequestParam IpPort ipPort) {
+        log.info("ipPort IP = {}", ipPort.getIp());
+        log.info("ipPort PORT = {}", ipPort.getPort());
+        return "ok";
+    }
 }
